@@ -1,7 +1,8 @@
-const orm = require("../config/orm.js");
+//const orm = require("../config/orm.js");
 
 // An object that is exported to burgers-controller,js
 //calling the functions from the orm.js file
+/*
 var burgerORM = {
   	selectAll: function(response){
   		orm.selectAll(function(data){
@@ -25,4 +26,21 @@ var burgerORM = {
     }
 }
 
+
 module.exports = burgerORM;
+*/
+module.exports = function(sequelize, DataTypes) {
+  var Burgers= sequelize.define("Burgers", {
+      burger_name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+
+      },
+      devoured: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      }
+  });
+  return Burgers;
+};

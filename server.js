@@ -4,8 +4,12 @@ const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
+
 //use app for an express call
 const app = express();
+
+//connect to database models
+var db = require("./models");
 
 //Set port, process.env.PORT for heroku, 3000 for local machine
 const PORT = process.env.PORT || 3000;
@@ -30,9 +34,16 @@ app.use(express.static(__dirname + "/public"));
 const routes = require("./controllers/burgers-controller.js");
 
 app.use("/", routes);
-app.use("/:id", routes);
+//app.use("/:id", routes);
 
 //Initiate the listener
-app.listen(PORT, function(){
+//remove for sequelize sync
+/* app.listen(PORT, function(){
   console.log("App listening on PORT: " + PORT);
+}); */
+
+db.sequelize.sync(/* { force: true } */).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
