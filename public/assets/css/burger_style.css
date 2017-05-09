@@ -42,6 +42,12 @@ h1 {
   background-color: #6d609e;
 }
 
+.burger_name {
+	height: 70px;
+	color: #6d609e;
+	border: 2px solid #ffcc00;
+}
+
 textarea.form-control {
   color: #6d609e;
   border: 2px solid #ffcc00;
