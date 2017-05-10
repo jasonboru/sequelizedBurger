@@ -6,9 +6,9 @@
 
 ### Overview
 
-In this assignment, I was asked to take the ![Express based Burger App](https://github.com/jasonboru/burger) and recreate it using Sequelize. All references to the vanilla MySQL queries were removed and I replaced them with Sequelize queries.
+In this assignment, I was asked to take the [Express based Burger App](https://github.com/jasonboru/burger) and recreate it using Sequelize. All references to the vanilla MySQL queries were removed and I replaced them with Sequelize queries.
 
-Check out the app running on heroku here:
+Check out the app running on heroku here: https://safe-wildwood-41289.herokuapp.com/
 
 ## Installation Instructions
 
